@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  audience: 'http://localhost:8091',
+  redirectUri: 'http://localhost:4200/callback'
 };
 
 /*

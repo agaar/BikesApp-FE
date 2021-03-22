@@ -2,16 +2,23 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import 'rxjs';
 import * as auth0 from 'auth0-js';
+import {​​​​​​​​ environment }​​​​​​​​ from'../../environments/environment';
+
+
 
 @Injectable()
 export class AuthService {
-
+  
+  audience = environment.audience;
+  redirectUri = environment.redirectUri;
+  
+  
   auth0 = new auth0.WebAuth({
     clientID: 'aiKY4Qa7ZtfAlCmcvs19O5TdCiXMT8Hx',
     domain: 'raga.eu.auth0.com',
     responseType: 'token id_token',
-    audience: 'http://localhost:8091',
-    redirectUri: 'http://localhost:4200/callback',
+    audience: this.audience ,
+    redirectUri: this.redirectUri ,
     scope: 'openid view:registration view:registrations'
   });
 

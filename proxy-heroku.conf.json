@@ -1,0 +1,11 @@
+{
+	"/server": {
+		"target": "https://raga-intro-bikes.herokuapp.com",
+		"secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/server" : ""
+    }
+	}
+}
