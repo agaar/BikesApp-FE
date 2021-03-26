@@ -1,8 +1,6 @@
 <div class="container">
   <form [formGroup]="bikeform" (ngSubmit)="submitRegistration()" novalidate>
-    <div *ngIf="validMessage != ''">
-      <h3 class="has-info">{{validMessage}}</h3>
-    </div>
+
     <div class="form-group">
       <label>Buyer Name</label>
       <input type="text" class="form-control" formControlName="name" required autofocus/>
@@ -37,7 +35,9 @@
       <label>Purchase Date</label>
       <input type="text" class="form-control" formControlName="purchaseDate" required/>
     </div>
-
+    <div *ngIf="validMessage != ''">
+      <h3 class="has-info">{{validMessage}}</h3>
+    </div>
     <button type="submit" class="btn btn-primary" >Submit</button>
   </form>
 </div>
