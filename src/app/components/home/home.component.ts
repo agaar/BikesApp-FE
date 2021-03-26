@@ -32,8 +32,8 @@ export class HomeComponent implements OnInit {
       })
     }
   submitRegistration(){
-    if(this.bikeform.get('purchasePrice')?.invalid) this.validMessage += "Purchase Price must be a number. "
-    else if(this.bikeform.get('purchaseDate')?.invalid) this.validMessage += "Purchase Date must be DD-MM-YYYY format. "
+    if(this.bikeform.get('purchasePrice')?.invalid) this.validMessage = "Purchase Price must be a number. "
+    else if(this.bikeform.get('purchaseDate')?.invalid) this.validMessage = "Purchase Date must be DD-MM-YYYY format. "
     else if (this.bikeform.valid) {
      
       this.bikeService.createBikeRegistration(this.bikeform.value).subscribe(
